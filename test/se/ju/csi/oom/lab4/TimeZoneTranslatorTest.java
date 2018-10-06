@@ -18,7 +18,7 @@ public class TimeZoneTranslatorTest {
 	public void testShiftTimeZone() {
 		DateTime _dateTime = new DateTime(2018,10,6,16,0,0);
 		_dateTime = TimeZoneTranslator.shiftTimeZone(_dateTime, TimeZone.GREENWICH_UTC.getOffset(), TimeZone.PAKISTAN.getOffset());
-		assertEquals("2018-10-06 21:00:00", _dateTime.toString());
+		assertEquals("2018-10-06 21:00", _dateTime.toString());
 	}
 
 	@Test
@@ -35,14 +35,14 @@ public class TimeZoneTranslatorTest {
 				new HashSet<>(Arrays.asList(johannes, ragnar)),
 				HC218);
 		firstOomLecture = TimeZoneTranslator.shiftEventTimeZone(firstOomLecture, TimeZone.GREENWICH_UTC, TimeZone.PAKISTAN);
-		assertEquals("2018-08-27 13:00:00", firstOomLecture.getStartDate().toString());
-		assertEquals("2018-08-27 14:45:00", firstOomLecture.getEndDate().toString());
+		assertEquals("2018-08-27 13:00", firstOomLecture.getStartDate().toString());
+		assertEquals("2018-08-27 14:45", firstOomLecture.getEndDate().toString());
 	}
 	@Test
 	public void testShiftTimeZone2() {
 		DateTime _dateTime = new DateTime(2016,1,1,6,0,0);
 		_dateTime = TimeZoneTranslator.shiftTimeZone(_dateTime, TimeZone.CENTRAL_EUROPEAN_TIME.getOffset(), TimeZone.US_PACIFIC.getOffset());
-		assertEquals("2015-12-31 21:00:00", _dateTime.toString());
+		assertEquals("2015-12-31 21:00", _dateTime.toString());
 	}
 
 }
